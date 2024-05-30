@@ -1,0 +1,25 @@
+a)
+SELECT Name FROM City WHERE Population > 500;
+
+b)
+SELECT c.Name FROM City c 
+LEFT JOIN Building b ON c.CityID = b.CityID 
+WHERE b.BuildingID IS NULL;
+
+c)
+SELECT DISTINCT co.Name FROM Country co 
+JOIN City ci ON co.CountryID = ci.CountryID 
+WHERE ci.Population < 500;
+
+d)
+SELECT b.Name FROM Building b 
+JOIN City ci ON b.CityID = ci.CityID 
+JOIN Country co ON ci.CountryID = co.CountryID 
+WHERE co.Name IN ('Indonesia', 'Malaysia');
+
+e)
+SELECT b.Name FROM Building b 
+JOIN City ci ON b.CityID = ci.CityID 
+JOIN Country co ON ci.CountryID = co.CountryID 
+WHERE co.Name IN ('Indonesia', 'Malaysia') 
+AND b.Floors > 40;
